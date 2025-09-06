@@ -10,7 +10,7 @@ export default function Page() {
       "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
     logoText: "JW Marriott Residences",
     heroImage:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+      heroImage: "/hero.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1505691398372-84f0f9f3f95b?q=80&w=1600&auto=format&fit=crop",
