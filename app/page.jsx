@@ -1,37 +1,37 @@
+const PROJECT = {
+  name: "JW Marriott Residences | Downtown Orlando",
+  tagline:
+    "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
+  logoText: "JW Marriott Residences",
+  heroImage: "/hero.jpg",            // single, correct line
+  gallery: [
+    "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1505691398372-84f0f9f3f95b?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1600&auto=format&fit=crop",
+  ],
+  mapEmbed: "https://www.google.com/maps?q=downtown+orlando&output=embed",
+  brochureUrl: "#",
+  form: {
+    formspreeEndpoint: "https://formspree.io/f/YOUR_REAL_ID",
+    useNetlifyForms: false,
+    notifyEmail: "",
+  },
+  broker: {
+    team: "Corcoran Premier Realty",
+    agent: "Brynn Allen, REALTOR®",
+    phone: "(407) 617-8963",
+    email: "brynn.allen@corcoranpremier.com",
+    license: "BK3008729",
+  },
+};
 
 "use client";
 import React, { useState } from "react";
 
 
 export default function Page() {
-  const PROJECT = {
-    name: "JW Marriott Residences | Downtown Orlando",
-    tagline:
-      "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
-    logoText: "JW Marriott Residences",
-    heroImage: "/hero.jpg",
-    gallery: [
-      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505691398372-84f0f9f3f95b?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1600&auto=format&fit=crop",
-    ],
-    mapEmbed: "https://www.google.com/maps?q=downtown+orlando&output=embed",
-    brochureUrl: "#",
-    form: {
-      formspreeEndpoint: "https://formspree.io/f/xqadweon",
-      useNetlifyForms: false,
-      notifyEmail: "",
-    },
-    broker: {
-      team: "Corcoran Premier Realty",
-      agent: "Brynn Allen, REALTOR®",
-      phone: "(407) 555-0123",
-      email: "brynn@example.com",
-      license: "SL1234567",
-    },
-  };
-
+  
   const NAV = [
     { id: "home", label: "Home" },
     { id: "residences", label: "Residences" },
