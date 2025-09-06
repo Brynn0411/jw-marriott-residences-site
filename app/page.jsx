@@ -20,7 +20,8 @@ export default function Page() {
     mapEmbed: "https://www.google.com/maps?q=downtown+orlando&output=embed",
     brochureUrl: "#",
     form: {
-      formspreeEndpoint: "",
+      formspreeEndpoint: "https://formspree.io/f/XXXX",
+",
       useNetlifyForms: false,
       notifyEmail: "",
     },
