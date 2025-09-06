@@ -21,7 +21,6 @@ export default function Page() {
     brochureUrl: "#",
     form: {
       formspreeEndpoint: "https://formspree.io/f/XXXX",
-",
       useNetlifyForms: false,
       notifyEmail: "",
     },
