@@ -63,31 +63,45 @@ export default function Page() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if (!form.firstName || !form.email) {
-      alert("Please provide at least your first name and email.");
-      return;
-    }
-    setStatus("sending");
-    try {
-      if (usingFormspree) {
-        const resp = await fetch(PROJECT.form.formspreeEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...form, project: PROJECT.name, formName: "Interest List" }),
-        });
-        if (resp.ok) {
-          setStatus("success"); setForm(initial);
-        } else throw new Error("Submit failed");
-      } else {
-        setTimeout(() => { setStatus("success"); setForm(initial); }, 600);
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
+ async function handleSubmit(e) {
+  e.preventDefault();
+  if (!form.firstName || !form.email) {
+    alert("Please provide at least your first name and email.");
+    return;
   }
+  setStatus("sending");
+  try {
+    const endpoint = PROJECT.form.formspreeEndpoint;
+    if (!endpoint) throw new Error("Missing Formspree endpoint");
+
+    const resp = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",      // important for Formspree AJAX
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...form,
+        project: PROJECT.name,
+        formName: "Interest List"
+      })
+    });
+
+    if (resp.ok) {
+      setStatus("success");
+      setForm(initial);
+    } else {
+      const data = await resp.json().catch(() => ({}));
+      console.error("Formspree error:", data);
+      setStatus("error");
+      alert("Submit failed. Check Allowed Domains and your endpoint.");
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+}
+
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
