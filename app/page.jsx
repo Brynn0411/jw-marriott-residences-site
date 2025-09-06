@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
 
+"use client";
+import React, { useState } from "react";
+
 const PROJECT = {
   name: "JW Marriott Residences | Downtown Orlando",
   tagline:
     "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
   logoText: "JW Marriott Residences",
-  heroImage: "/hero.jpg", // exactly one heroImage line
+  heroImage: "/hero.jpg", // <-- exactly one line; leave as is
   gallery: [
     "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1505691398372-84f0f9f3f95b?q=80&w=1600&auto=format&fit=crop",
@@ -79,6 +82,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      {/* NAVBAR */}
       <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="font-semibold tracking-wide">{PROJECT.logoText}</div>
@@ -95,10 +99,15 @@ export default function Page() {
         </div>
       </header>
 
+      {/* HERO */}
       <section id="home" className="relative">
-        <div className="h-[70vh] w-full bg-center bg-cover" style={{ backgroundImage: `url(${PROJECT.heroImage})` }} />
+        <div
+          className="h-[70vh] w-full bg-center bg-cover"
+          style={{ backgroundImage: `url(${PROJECT.heroImage})` }}
+        />
       </section>
 
+      {/* RESIDENCES */}
       <section id="residences" className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div>
@@ -119,6 +128,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* LOCATION */}
       <section id="location" className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-2xl md:text-3xl font-semibold">Unbeatable Downtown Location</h2>
@@ -128,6 +138,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* REGISTER */}
       <section id="register" className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-10">
           <div>
