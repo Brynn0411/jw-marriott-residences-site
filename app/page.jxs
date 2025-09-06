@@ -1,1 +1,10 @@
+"use client";
 
+export default function Page() {
+  return (
+    <div style={{padding: 32, fontFamily: "system-ui"}}>
+      <h1>Site is building ✅</h1>
+      <p>If you see this, the page file is clean and compiling.</p>
+    </div>
+  );
+}
