@@ -215,20 +215,19 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
     </label>
   </div>
 
- {/* Submit */}
-<button
-  type="submit"
-  disabled={status === "sending"}
-  className="px-4 py-2 bg-black text-white rounded"
->
-  {status === "sending" ? "Sending..." : "Join Interest List"}
-</button>
+  {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="px-4 py-2 bg-black text-white rounded"
+      >
+        {status === "sending" ? "Sending..." : "Join Interest List"}
+      </button>
 
- {/* Error */}
+      {/* Error */}
       {status === "error" && (
         <p className="text-red-600 text-sm">Please try again.</p>
       )}
-
     </form>
   </div>
 );
