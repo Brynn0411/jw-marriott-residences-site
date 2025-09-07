@@ -174,7 +174,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       onChange={update("phone")}
       required
       inputMode="tel"
-      pattern="[\d\s\-\(\)\+]*"
+      pattern="[\d\s()+-]*"
       placeholder="(407) 555-0123"
     />
   </div>
