@@ -224,21 +224,20 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       </button>
 
     {/* Submit */}
-<button
-  type="submit"
-  disabled={status === "sending"}
-  className="px-4 py-2 bg-black text-white rounded"
->
-  {status === "sending" ? "Sending..." : "Join Interest List"}
-</button>
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="px-4 py-2 bg-black text-white rounded"
+      >
+        {status === "sending" ? "Sending..." : "Join Interest List"}
+      </button>
 
-{/* Error */}
-{status === "error" ? (
-  <p className="text-red-600 text-sm">Please try again.</p>
-) : null}
-</form>
-</div>
-); // closes the page component's return
+      {status === "error" ? (
+        <p className="text-red-600 text-sm">Please try again.</p>
+      ) : null}
+    </form>
+  </div>
+);
 
 function Input({ label, value, onChange, type = "text", required }) {
   return (
