@@ -224,8 +224,8 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
     {status === "sending" ? "Sending..." : "Join Interest List"}
   </button>
 
-  {/* Error */}
-  {status === "error" ? (
+ {/* Error */}
+{status === "error" && <p className="text-red-600 text-sm">Please try again.</p>}
     <p className="text-red-600 text-sm">Please try again.</p>
   ) : null}
 </form>
