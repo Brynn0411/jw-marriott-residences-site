@@ -170,7 +170,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
     <Input
       label="Phone"
       type="tel"
-      value={form.phone"}
+      value={form.phone}
       onChange={update("phone")}
       required
       inputMode="tel"
