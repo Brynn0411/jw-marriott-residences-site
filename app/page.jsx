@@ -45,6 +45,8 @@ const initial = {
 export default function Page() {
   const [form, setForm] = useState(initial);
   const [status, setStatus] = useState("idle");
+  const update = (key) => (e) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }));
 
   function scrollToId(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -52,7 +54,7 @@ export default function Page() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!form.firstName || !form.email) return alert("First name & email required.");
+    if (!form.firstName || !form.lastName || !form.email || !form.phone) { return alert("First name & email required.");
     setStatus("sending");
     try {
       const r = await fetch(PROJECT.form.formspreeEndpoint, {
@@ -98,7 +100,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
-              <li>• 1–3 bedroom floor plans; penthouse collection</li>
+              <li>• 2–4 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
               <li>• Elevated pool deck, fitness & spa privileges</li>
               <li>• Valet, 24/7 attended lobby, private owners' lounge</li>
@@ -138,10 +140,26 @@ export default function Page() {
               <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
                 <Input label="First name*" value={form.firstName}
                        onChange={v => setForm({ ...form, firstName: v })} required />
+                <Input label="Last name*" value={form.lastName}
+                       onChange={v => setForm({ ...form, lastName: v })} required />
                 <Input label="Email*" type="email" value={form.email}
                        onChange={v => setForm({ ...form, email: v })} required />
                 <Input label="Phone" value={form.phone}
                        onChange={v => setForm({ ...form, phone: v })} />
+                {/* Price Range */}
+  <label className="block">
+    <span className="text-sm text-gray-700">Price range</span>
+    <select
+      className="mt-1 w-full border rounded px-3 py-2"
+      value={form.priceRange}
+      onChange={update("priceRange")}
+      required
+    >
+      <option value="" disabled>Select price range</option>
+      <option value="Up to $1M">Up to $1M</option>
+      <option value="$1–$2M">$1–$2M</option>
+      <option value="$2–$3M">$2–$3M</option>
+      <option value="$3M+">$3M+</option>
                 <button type="submit" disabled={status === "sending"}
                         className="rounded-2xl px-5 py-3 bg-black text-white disabled:opacity-50">
                   {status === "sending" ? "Submitting…" : "Join List"}
