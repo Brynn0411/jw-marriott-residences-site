@@ -222,7 +222,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       >
         {status === "sending" ? "Sending..." : "Join Interest List"}
       </button>
-              {null} {
+        
 </form>
 </div>
 );
