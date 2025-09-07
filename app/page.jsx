@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 
 const PROJECT = {
-  name: "JW Marriott Residences | Downtown Orlando",
+  name: "JW Marriott Residences | Lake Eola",
   tagline:
-    "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
-  logoText: "JW Marriott Residences",
+    "Limited luxury condominium residences above JW Marriott Lake Eola, steps from the Dr. Phillips Center.",
+  logoText: "JW Marriott Residences Lake Eola",
   heroImage: "/hero-v1.jpg",
   gallery: [
     "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
