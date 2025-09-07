@@ -1,6 +1,6 @@
 "use client";  //bump
 import React, { useState } from "react";
-
+import Input from "./components/Input";
 const PROJECT = {
   name: "JW Marriott Residences | Lake Eola",   //bump
   tagline:
@@ -238,18 +238,3 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
     </form>
   </div>
 );
-
-function Input({ label, value, onChange, type = "text", required }) {
-  return (
-    <label className="block">
-      <span className="text-sm text-gray-700">{label}</span>
-      <input
-        type={type}
-        required={required}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full rounded-xl border px-3 py-2"
-      />
-    </label>
-  );
-}
