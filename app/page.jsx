@@ -227,7 +227,15 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 {/* Error */}
 {status === "error" && <p className="text-red-600 text-sm">Please try again.</p>}
 </form>
-      
+ </button>
+
+{status === "error" && (
+  <p className="text-red-600 text-sm">Please try again.</p>
+)}
+
+</form>
+</div>
+);     
 function Input({ label, value, onChange, type = "text", required }) {
   return (
     <label className="block">
