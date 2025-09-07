@@ -96,7 +96,7 @@ export default function Page() {
       <section id="residences" className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities -TEST-123</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
               <li>• 2–4 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
