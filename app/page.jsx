@@ -143,7 +143,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
                 <button onClick={() => setStatus("idle")} className="mt-4 rounded-2xl px-4 py-2 border">Add another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="grid gap-4">
+            <form onSubmit={handleSubmit} className="grid gap-4">
   {/* Row 1 */}
   <div className="grid md:grid-cols-2 gap-4">
     <Input
@@ -225,12 +225,11 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   </button>
 
   {/* Error */}
-  {status === "error" && (
-    <div className="text-red-600 text-sm">Please try again.</div>
-  )}
+  {status === "error" ? (
+    <p className="text-red-600 text-sm">Please try again.</p>
+  ) : null}
 </form>
-
-
+      
 function Input({ label, value, onChange, type = "text", required }) {
   return (
     <label className="block">
