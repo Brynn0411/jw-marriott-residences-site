@@ -137,7 +137,13 @@ export default function Page() {
                 <button onClick={() => setStatus("idle")} className="mt-4 rounded-2xl px-4 py-2 border">Add another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
+<p
+  className={status === "error" ? "text-red-600 text-sm mt-2" : "hidden"}
+  aria-live="polite"
+  >
+  Please try again.
+  </p>
+      <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
                 <Input label="First name*" value={form.firstName}
                        onChange={v => setForm({ ...form, firstName: v })} required />
                 <Input label="Last name*" value={form.lastName}
