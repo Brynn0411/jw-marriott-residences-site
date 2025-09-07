@@ -164,12 +164,12 @@ export default function Page() {
                         className="rounded-2xl px-5 py-3 bg-black text-white disabled:opacity-50">
                   {status === "sending" ? "Submitting…" : "Join List"}
                 </button>
-                {status === "error" && <p className="text-red-600 text-sm"> Please try again.</p>
-                  )}
-              </form>
-          </div>
+                {status === "error" && (<p className="text-red-600 text-sm"> Please try again.</p>p>
+    )}
+   </form>
+   </div>
+  </div>
       </section>
-    </div>
   );
 }
 
