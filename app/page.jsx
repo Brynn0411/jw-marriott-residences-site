@@ -231,7 +231,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
 </form>
 </div>
-); // 
+);
   function Input({ label, value, onChange, type = "text", required }) {
   return (
     <label className="block">
