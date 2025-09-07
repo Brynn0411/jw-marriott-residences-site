@@ -167,17 +167,15 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       onChange={update("email")}
       required
     />
-    <Input
-      label="Phone"
-      type="tel"
-      value={form.phone}
-      onChange={update("phone")}
-      required
-      inputMode="tel"
-      pattern="[\d\s()+-]*"
-      placeholder="(407) 555-0123"
-    />
-  </div>
+   <Input
+  label="Phone"
+  type="tel"
+  value={form.phone}            // <-- no extra quote
+  onChange={update("phone")}
+  required
+  inputMode="tel"
+  placeholder="(407) 555-0123"
+/>
 
   <label className="block">
     <span className="text-sm">Are you a Realtor?</span>
