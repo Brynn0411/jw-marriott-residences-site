@@ -138,6 +138,8 @@ export default function Page() {
               <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
                 <Input label="First name*" value={form.firstName}
                        onChange={v => setForm({ ...form, firstName: v })} required />
+                <Input label="Last name*" value={form.lastName}
+                       onChange={v => setForm({ ...form, lastName: v })} required />
                 <Input label="Email*" type="email" value={form.email}
                        onChange={v => setForm({ ...form, email: v })} required />
                 <Input label="Phone" value={form.phone}
