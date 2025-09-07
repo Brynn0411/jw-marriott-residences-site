@@ -1,8 +1,8 @@
 "use client";  //bump
 import React, { useState } from "react";
-import Input from "./components/Input";
+
 const PROJECT = {
-  name: "JW Marriott Residences | Lake Eola",   //bump
+  name: "JW Marriott Residences | Lake Eola",
   tagline:
     "Limited luxury condominium residences above JW Marriott Lake Eola, steps from the Dr. Phillips Center.",
   logoText: "JW Marriott Residences Lake Eola",
@@ -43,16 +43,8 @@ const initial = {
 };
 
 export default function Page() {
-  // form state + helper
-const [form, setForm] = useState({
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  isRealtor: "No",
-  priceRange: "",     // NEW
-});
-const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  const [form, setForm] = useState(initial);
+  const [status, setStatus] = useState("idle");
 
   function scrollToId(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -106,7 +98,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
-              <li>• 2-4 bedroom floor plans; penthouse collection</li>
+              <li>• 1–3 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
               <li>• Elevated pool deck, fitness & spa privileges</li>
               <li>• Valet, 24/7 attended lobby, private owners' lounge</li>
@@ -143,101 +135,34 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
                 <button onClick={() => setStatus("idle")} className="mt-4 rounded-2xl px-4 py-2 border">Add another</button>
               </div>
             ) : (
-            <form onSubmit={handleSubmit} className="grid gap-4">
-  {/* Row 1 */}
-  <div className="grid md:grid-cols-2 gap-4">
-    <Input
-      label="First name"
-      value={form.firstName}
-      onChange={update("firstName")}
-      required
-    />
-    <Input
-      label="Last name"
-      value={form.lastName}
-      onChange={update("lastName")}
-      required
-    />
-  </div>
+              <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
+                <Input label="First name*" value={form.firstName}
+                       onChange={v => setForm({ ...form, firstName: v })} required />
+                <Input label="Email*" type="email" value={form.email}
+                       onChange={v => setForm({ ...form, email: v })} required />
+                <Input label="Phone" value={form.phone}
+                       onChange={v => setForm({ ...form, phone: v })} />
+                <button type="submit" disabled={status === "sending"}
+                        className="rounded-2xl px-5 py-3 bg-black text-white disabled:opacity-50">
+                  {status === "sending" ? "Submitting…" : "Join List"}
+                </button>
+                {status === "error" && <div className="text-red-600 text-sm">Please try again.</div>}
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
 
-  {/* Row 2 */}
-  <div className="grid md:grid-cols-2 gap-4">
-    <Input
-      label="Email"
-      type="email"
-      value={form.email}
-      onChange={update("email")}
-      required
-    />
-    <Input
-      label="Phone"
-      type="tel"
-      value={form.phone}
-      onChange={update("phone")}
-      required
-      inputMode="tel"
-      placeholder="(407) 555-0123"
-    />
-  </div>
-
-  {/* Realtor? */}
-  <div>
-    <label className="block">
-      <span className="text-sm">Are you a Realtor?</span>
-      <select
-        className="mt-1 w-full border rounded px-3 py-2"
-        value={form.isRealtor}
-        onChange={update("isRealtor")}
-        required
-      >
-        <option value="No">No</option>
-        <option value="Yes">Yes</option>
-      </select>
-    </label>
-  </div>
-
-  {/* Price range */}
-  <div>
-    <label className="block">
-      <span className="text-sm">Price range</span>
-      <select
-        className="mt-1 w-full border rounded px-3 py-2"
-        value={form.priceRange}
-        onChange={update("priceRange")}
-        required
-      >
-        <option value="" disabled>Select price range</option>
-        <option value="Up to $1M">Up to $1M</option>
-        <option value="$1–$2M">$1–$2M</option>
-        <option value="$2–$3M">$2–$3M</option>
-        <option value="$3M+">$3M+</option>
-      </select>
-    </label>
-  </div>
-  {/* Submit */}
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="px-4 py-2 bg-black text-white rounded"
-      >
-        {status === "sending" ? "Sending..." : "Join Interest List"}
-      </button>
-        
-</form>
-</div>
-);
-} 
 function Input({ label, value, onChange, type = "text", required }) {
   return (
     <label className="block">
       <span className="text-sm text-gray-700">{label}</span>
-      <input
-        type={type}
-        required={required}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full rounded-xl border px-3 py-2"
-      />
+      <input type={type} required={required} value={value}
+             onChange={(e) => onChange(e.target.value)}
+             className="mt-1 w-full rounded-xl border px-3 py-2" />
     </label>
   );
 }
