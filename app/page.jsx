@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const PROJECT = {
-  name: "JW Marriott Residences | Lake Eola",
+  name: "JW Marriott Residences | Lake Eola",   //bump
   tagline:
     "Limited luxury condominium residences above JW Marriott Lake Eola, steps from the Dr. Phillips Center.",
   logoText: "JW Marriott Residences Lake Eola",
