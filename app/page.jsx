@@ -52,7 +52,7 @@ export default function Page() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!form.firstName || !form.email) return alert("First name & email required.");
+    if (!form.firstName || !form.lastName || !form.phone || !form.email) return alert("First name & email required.");
     setStatus("sending");
     try {
       const r = await fetch(PROJECT.form.formspreeEndpoint, {
@@ -98,7 +98,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
-              <li>• 1–3 bedroom floor plans; penthouse collection</li>
+              <li>• 2–4 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
               <li>• Elevated pool deck, fitness & spa privileges</li>
               <li>• Valet, 24/7 attended lobby, private owners' lounge</li>
@@ -138,6 +138,8 @@ export default function Page() {
               <form onSubmit={handleSubmit} className="rounded-2xl border p-6 grid grid-cols-1 gap-4">
                 <Input label="First name*" value={form.firstName}
                        onChange={v => setForm({ ...form, firstName: v })} required />
+                <Input label="Last name*" value={form.lastName}
+                       onChange={v => setForm({ ...form, lastName: v })} required />
                 <Input label="Email*" type="email" value={form.email}
                        onChange={v => setForm({ ...form, email: v })} required />
                 <Input label="Phone" value={form.phone}
