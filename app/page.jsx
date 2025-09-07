@@ -214,7 +214,6 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       </select>
     </label>
   </div>
-
   {/* Submit */}
       <button
         type="submit"
@@ -230,8 +229,9 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       )}
     </form>
   </div>
-);
-  function Input({ label, value, onChange, type = "text", required }) {
+); // closes the page component's return(
+
+function Input({ label, value, onChange, type = "text", required }) {
   return (
     <label className="block">
       <span className="text-sm text-gray-700">{label}</span>
@@ -244,4 +244,4 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
       />
     </label>
   );
-}
+} 
