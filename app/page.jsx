@@ -106,7 +106,7 @@ const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
-              <li>• 1–3 bedroom floor plans; penthouse collection</li>
+              <li>• 2-4 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
               <li>• Elevated pool deck, fitness & spa privileges</li>
               <li>• Valet, 24/7 attended lobby, private owners' lounge</li>
