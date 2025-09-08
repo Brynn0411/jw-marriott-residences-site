@@ -1,20 +1,20 @@
-
+import { PROJECCT } from "./project";
 "use client";
 import React, { useState } from "react";
 
 
 export default function Page() {
   const PROJECT = {
-    name: "JW Marriott Residences | Downtown Orlando",
+    name: "JW Marriott Residences | Lake Eola",
     tagline:
       "Limited luxury condominium residences above JW Marriott Orlando, steps from the Dr. Phillips Center.",
-    logoText: "JW Marriott Residences",
-    heroImage: "/hero.jpg",
+    logoText: "JW Marriott Residences Lake Eola",
+    heroImage: "/hero-v1.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505691398372-84f0f9f3f95b?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1600&auto=format&fit=crop",
+      "lobbyjw.png",
+      "lobby2.png",
+      "exteriorjw.png",
+      "aerialjw.png",
     ],
     mapEmbed: "https://www.google.com/maps?q=downtown+orlando&output=embed",
     brochureUrl: "#",
@@ -25,10 +25,10 @@ export default function Page() {
     },
     broker: {
       team: "Corcoran Premier Realty",
-      agent: "Brynn Allen, REALTOR®",
-      phone: "(407) 555-0123",
-      email: "brynn@example.com",
-      license: "SL1234567",
+      agent: "A. Brynn Allen, REALTOR®",
+      phone: "(407) 617-8963",
+      email: "brynn.allen@corcoranpremier.com",
+      license: "BK3008729",
     },
   };
 
@@ -139,7 +139,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Residences & Amenities</h2>
             <ul className="mt-5 space-y-2 text-gray-700">
-              <li>• 1–3 bedroom floor plans; penthouse collection</li>
+              <li>• 2–4 bedroom floor plans; penthouse collection</li>
               <li>• Hotel-serviced living with JW concierge access</li>
               <li>• Elevated pool deck, fitness & spa privileges</li>
               <li>• Valet, 24/7 attended lobby, private owners' lounge</li>
