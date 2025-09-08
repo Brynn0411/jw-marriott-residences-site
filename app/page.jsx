@@ -1,6 +1,5 @@
 "use client"; 
 import React, { useState } from "react";
-import {PROJECT} from "./project";
 const PROJECT = {
   name: "JW Marriott Residences | Lake Eola",
   tagline:
