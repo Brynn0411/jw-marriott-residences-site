@@ -10,7 +10,8 @@ const PROJECT = {
     "/lobbyjw.png",
     "/lobby2.png",
     "/exteriorjw.png",
-    "/aerialjw.png",
+    "/aerialjw.png"
+    ]
  features:[
   "2-4 bedroom floor plans; penthouse collection", "Hotel-serviced living with ]W concierge acess", Elevated pool deck, fitness & Spa priveleges","Valet, 24/7 attended lobby, private owners' lounge", "Floor-to-ceiling glazing, curated finishes"
     ]
