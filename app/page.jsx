@@ -7,11 +7,14 @@ const PROJECT = {
   logoText: "JW Marriott Residences Lake Eola",
   heroImage: "/hero-v1.jpg",
   gallery: [
-    "lobbyjw.png",
-    "lobby2.png",
-    "exteriorjw.png",
-    "aerialjw.png",
-  ],
+    "/lobbyjw.png",
+    "/lobby2.png",
+    "/exteriorjw.png",
+    "/aerialjw.png",
+ features:[
+  "2-4 bedroom floor plans; penthouse collection", "Hotel-serviced living with ]W concierge acess", Elevated pool deck, fitness & Spa priveleges","Valet, 24/7 attended lobby, private owners' lounge", "Floor-to-ceiling glazing, curated finishes"
+    ]
+    };
   mapEmbed: "https://www.google.com/maps?q=downtown+orlando&output=embed",
   brochureUrl: "#",
   form: {
